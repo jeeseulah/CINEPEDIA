@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CINEPEDIA</title>
+    <!--swiper-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!--부트스트랩-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!--MY 스타일-->
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <!--네비게이션 영역 시작-->
+      <nav
+        id="nav"
+        class="navbar navbar-expand-md fixed-top w-100"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <!--네비로고-->
+          <a class="navbar-brand me-4" href="./index.html">
+            <img src="./images/mainlogo.png" alt="메인로고" />
+          </a>
+          <!--햄버거 버튼-->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#nav-menu"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--네비게이션 메뉴-->
+          <div class="collapse navbar-collapse nav-underline" id="nav-menu">
+            <div class="order-md-last navbar-nav my-2">
+              <a href="#" class="text-light">
+                <i class="bi bi-search fs-4"></i>
+              </a>
+            </div>
+            <ul class="order-md-first navbar-nav me-auto my-2">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./index.html"
+                  >홈</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./moviechart.html">무비차트</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./top20.html">TOP20</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./nowplaying.html">현재상영작</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./upcoming.html">상영예정작</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--네비게이션 영역 끝-->
+      <!--슬라이드 영역 시작-->
+      <div id="slide-content" class="bg-black overflow-hidden">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide rounded position-relative"
+              style="background-image: url(./images/slide-img1.jpg)"
+            >
+              <div
+                class="text-start text-light position-absolute left-0 bottom-0 p-3"
+              >
+                <h2 class="fs-2 fw-bold mb-5">
+                  상상하는 그 이상의 이야기가 시작된다.
+                </h2>
+                <h3 class="fs-4 fw-bold">5월 25일 대개봉</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                  repellat corporis possimus reiciendis nisi ipsa.
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide rounded"
+              style="background-image: url(./images/slide-img2.jpg)"
+            ></div>
+            <div
+              class="swiper-slide rounded"
+              style="background-image: url(./images/slide-img3.jpg)"
+            ></div>
+            <div
+              class="swiper-slide rounded"
+              style="background-image: url(./images/slide-img1.jpg)"
+            ></div>
+            <div
+              class="swiper-slide rounded"
+              style="background-image: url(./images/slide-img2.jpg)"
+            ></div>
+            <div
+              class="swiper-slide rounded"
+              style="background-image: url(./images/slide-img3.jpg)"
+            ></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <!--슬라이드 영역 끝-->
+      <!--무비 리스트 시작-->
+      <div id="movielist" class="py-4 bg-black">
+        <div class="container">
+          <!--무비차트 시작-->
+          <div class="pt-5">
+            <div class="d-flex p-3 text-light">
+              <h2 class="fs-2 fw-bold m-0">무비차트</h2>
+              <p class="badge m-0 pt-3 px-3 text-white-50">
+                05.12 ~ 05.18 기준
+              </p>
+              <a
+                href="./moviechart.html"
+                class="ms-auto mt-2 text-white-50 texthover"
+                >더보기 ></a
+              >
+            </div>
+            <div id="moviechart" class="swiper-container overflow-hidden">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img1.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지1"
+                      />
+                      <div class="card-img-overlay h-75 overflow-hidden">
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="display-2 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3 my-0"
+                    >
+                      1
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img2.png"
+                        class="img-fluid rounded"
+                        alt="샘플이미지2"
+                      />
+                      <div class="card-img-overlay h-75 overflow-hidden">
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="display-2 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3 my-0"
+                    >
+                      2
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img3.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지3"
+                      />
+                      <div class="card-img-overlay h-75 overflow-hidden">
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="display-2 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3 my-0"
+                    >
+                      3
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img4.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지4"
+                      />
+                      <div class="card-img-overlay h-75 overflow-hidden">
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="display-2 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3 my-0"
+                    >
+                      4
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img5.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지5"
+                      />
+                      <div class="card-img-overlay h-75 overflow-hidden">
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="display-2 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3 my-0"
+                    >
+                      5
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img6.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지6"
+                      />
+                      <div class="card-img-overlay h-75 overflow-hidden">
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="display-2 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3 my-0"
+                    >
+                      6
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img1.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지1"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      1
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img2.png"
+                        class="img-fluid rounded"
+                        alt="샘플이미지2"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      2
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img3.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지3"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      3
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img4.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지4"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      4
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img5.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지5"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      5
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img6.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지6"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      6
+                    </h1>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--무비차트 끝-->
+          <!--TOP20 시작-->
+          <div class="pt-5">
+            <div class="d-flex p-3 text-light">
+              <h2 class="fs-2 fw-bold m-0">TOP20</h2>
+              <a
+                href="./top20.html"
+                class="ms-auto mt-2 text-white-50 texthover"
+                >더보기 ></a
+              >
+            </div>
+            <div id="top20" class="swiper-container overflow-hidden">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img1.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지1"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      1
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img2.png"
+                        class="img-fluid rounded"
+                        alt="샘플이미지2"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      2
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img3.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지3"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      3
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img4.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지4"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      4
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img5.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지5"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      5
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img6.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지6"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      6
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img1.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지1"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      1
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img2.png"
+                        class="img-fluid rounded"
+                        alt="샘플이미지2"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      2
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img3.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지3"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      3
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img4.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지4"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      4
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img5.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지5"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      5
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img6.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지6"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      6
+                    </h1>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--TOP20 끝-->
+          <!--현재상영작 시작-->
+          <div class="pt-5">
+            <div class="d-flex p-3 text-light">
+              <h2 class="fs-2 fw-bold m-0">현재상영작</h2>
+              <a
+                href="./nowplaying.html"
+                class="ms-auto mt-2 text-white-50 texthover"
+                >더보기 ></a
+              >
+            </div>
+            <div id="nowplaying" class="swiper-container overflow-hidden">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img1.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지1"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      1
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img2.png"
+                        class="img-fluid rounded"
+                        alt="샘플이미지2"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      2
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img3.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지3"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      3
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img4.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지4"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      4
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img5.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지5"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      5
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img6.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지6"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      6
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img1.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지1"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      1
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img2.png"
+                        class="img-fluid rounded"
+                        alt="샘플이미지2"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      2
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img3.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지3"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      3
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img4.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지4"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      4
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img5.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지5"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      5
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img6.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지6"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      6
+                    </h1>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--현재상영작 끝-->
+          <!--상영예정작 시작-->
+          <div class="py-5">
+            <div class="d-flex p-3 text-light">
+              <h2 class="fs-2 fw-bold m-0">상영예정작</h2>
+              <a
+                href="./upcoming.html"
+                class="ms-auto mt-2 text-white-50 texthover"
+                >더보기 ></a
+              >
+            </div>
+            <div id="upcoming" class="swiper-container overflow-hidden">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img1.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지1"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      1
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img2.png"
+                        class="img-fluid rounded"
+                        alt="샘플이미지2"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      2
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img3.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지3"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      3
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img4.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지4"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      4
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img5.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지5"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      5
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img6.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지6"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      6
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img1.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지1"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      1
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img2.png"
+                        class="img-fluid rounded"
+                        alt="샘플이미지2"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      2
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img3.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지3"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      3
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img4.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지4"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      4
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img5.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지5"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      5
+                    </h1>
+                  </a>
+                </div>
+                <div class="swiper-slide position-relative">
+                  <a href="./movie_detail.html">
+                    <div class="card text-bg-dark">
+                      <img
+                        src="./images/sample-img6.jpg"
+                        class="img-fluid rounded"
+                        alt="샘플이미지6"
+                      />
+                      <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content. This content is
+                          a little bit longer.
+                        </p>
+                        <p class="card-text">
+                          <small>Last updated 3 mins ago</small>
+                        </p>
+                      </div>
+                    </div>
+                    <h1
+                      class="fs-1 roboto-black-italic position-absolute bottom-0 start-0 text-light mx-3"
+                    >
+                      6
+                    </h1>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--상영예정작 끝-->
+          <!--공지 시작-->
+          <div class="pt-4 pb-2">
+            <div class="d-flex bg-dark opacity-75 rounded">
+              <a href="#" class="fs-6 m-3 text-white-50">공지사항</a>
+              <a href="#" class="fs-6 m-3 text-light texthover">
+                영화 이벤트 서비스 종료 안내 (24년 6월 18일 24시)
+              </a>
+              <button type="button" class="btn btn-dark ms-auto">
+                <i class="bi bi-chevron-right fs-4"></i>
+              </button>
+            </div>
+          </div>
+          <!--공지 끝-->
+        </div>
+      </div>
+      <!--무비 리스트 끝-->
+      <!--푸터 영역 시작-->
+      <footer
+        id="footer"
+        class="bg-black border-top border-secondary border-opacity-25"
+      >
+        <div class="container pb-3">
+          <div class="pt-5 text-white-50">
+            <div class="d-flex flex-wrap ps-0 mb-3 w-100 footer-text">
+              <span><a href="#" class="pe-4">회사소개</a></span>
+              <span><a href="#" class="pe-4">서비스 소개</a></span>
+              <span><a href="#" class="pe-4">이용약관</a></span>
+              <span
+                ><a href="#" class="fw-bold pe-4">개인정보 처리방침</a></span
+              >
+              <span><a href="#" class="pe-4">고객센터</a></span>
+            </div>
+            <div>
+              <span>대표이사 : 지슬아 | </span>
+              <span
+                >깃허브주소 :
+                <a href="https://github.com/jeeseulah"
+                  >https://github.com/jeeseulah</a
+                >
+                |
+              </span>
+              <span
+                >고객센터 1234-5678 (평일 09:00~18:00 / 점심시간 12:00~13:00 /
+                주말 및 공휴일 휴무) |
+              </span>
+            </div>
+            <div>
+              <span>사업자등록번호 123-45-67890 | </span>
+              <span
+                >호스팅서비스제공자 : 마이크로소프트 유한회사,
+                구글클라우드코리아유한회사, 아마존웹서비시즈코리아 유한회사 |
+              </span>
+            </div>
+            <div>
+              <span>통신판매업 신고번호 : 제 2024-성남중원구-0000호 | </span>
+            </div>
+            <div>
+              <span><i>경기 성남시 중원구 상대원동 152-3번지 </i> | </span>
+              <span>"전자우편주소 : "jeeseula@gmail.com |</span>
+            </div>
+            <br />
+            <div>
+              <span>Copyright© CINEPEDIA(주) All rights reserved. | </span>
+            </div>
+          </div>
+          <div class="justify-content-end d-flex p-3">
+            <img src="./images/footerlogo.png" alt="푸터로고" />
+          </div>
+        </div>
+      </footer>
+      <!--푸터 영역 끝-->
+    </div>
+
+    <!--swiper 자바스크립트-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--부트스트랩 자바스크립트-->
+    <script src="./javascript/bootstrap.bundle.js"></script>
+    <!--MY 자바스크립트-->
+    <script src="./javascript/script.js"></script>
+    <!--API-->
+    <script src="./javascript/index.js"></script>
+    <script src="./javascript/api.js"></script>
+  </body>
+</html>

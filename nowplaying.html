@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CINEPEDIA</title>
+    <!--부트스트랩-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!--MY 스타일-->
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <!--네비게이션 영역 시작-->
+      <nav
+        id="nav"
+        class="navbar navbar-expand-md fixed-top w-100"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <!--네비로고-->
+          <a class="navbar-brand me-4" href="./index.html">
+            <img src="./images/mainlogo.png" alt="메인로고" />
+          </a>
+          <!--햄버거 버튼-->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#nav-menu"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--네비게이션 메뉴-->
+          <div class="collapse navbar-collapse nav-underline" id="nav-menu">
+            <div class="order-md-last navbar-nav my-2">
+              <a href="#" class="text-light">
+                <i class="bi bi-search fs-4"></i>
+              </a>
+            </div>
+            <ul class="order-md-first navbar-nav me-auto my-2">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html"
+                  >홈</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./moviechart.html">무비차트</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./top20.html">TOP20</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./nowplaying.html"
+                  >현재상영작</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./upcoming.html">상영예정작</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--네비게이션 영역 끝-->
+
+      <!--무비차트 시작-->
+      <div id="nowplayinglist" class="bg-black">
+        <div class="container">
+          <div class="d-flex text-light py-5 px-3">
+            <h2 class="fs-2 fw-bold m-0">무비차트</h2>
+          </div>
+          <div class="row g-3">
+            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
+              <a href="./movie_detail.html">
+                <div class="card text-bg-dark">
+                  <img
+                    src="./images/sample-img1.jpg"
+                    class="img-fluid rounded"
+                    alt="샘플이미지1"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
+              <a href="./movie_detail.html">
+                <div class="card text-bg-dark">
+                  <img
+                    src="./images/sample-img2.png"
+                    class="img-fluid rounded"
+                    alt="샘플이미지2"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
+              <a href="./movie_detail.html">
+                <div class="card text-bg-dark">
+                  <img
+                    src="./images/sample-img3.jpg"
+                    class="img-fluid rounded"
+                    alt="샘플이미지3"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
+              <a href="./movie_detail.html">
+                <div class="card text-bg-dark">
+                  <img
+                    src="./images/sample-img4.jpg"
+                    class="img-fluid rounded"
+                    alt="샘플이미지4"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
+              <a href="./movie_detail.html">
+                <div class="card text-bg-dark">
+                  <img
+                    src="./images/sample-img5.jpg"
+                    class="img-fluid rounded"
+                    alt="샘플이미지5"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
+              <a href="./movie_detail.html">
+                <div class="card text-bg-dark">
+                  <img
+                    src="./images/sample-img6.jpg"
+                    class="img-fluid rounded"
+                    alt="샘플이미지6"
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--무비차트 끝-->
+
+      <!--푸터 영역 시작-->
+      <footer
+        id="footer"
+        class="bg-black border-top border-secondary border-opacity-25"
+      >
+        <div class="container pb-3">
+          <div class="pt-5 text-white-50">
+            <div class="d-flex flex-wrap ps-0 mb-3 w-100 footer-text">
+              <span><a href="#" class="pe-4">회사소개</a></span>
+              <span><a href="#" class="pe-4">서비스 소개</a></span>
+              <span><a href="#" class="pe-4">이용약관</a></span>
+              <span
+                ><a href="#" class="fw-bold pe-4">개인정보 처리방침</a></span
+              >
+              <span><a href="#" class="pe-4">고객센터</a></span>
+            </div>
+            <div>
+              <span>대표이사 : 지슬아 | </span>
+              <span
+                >깃허브주소 :
+                <a href="https://github.com/jeeseulah"
+                  >https://github.com/jeeseulah</a
+                >
+                |
+              </span>
+              <span
+                >고객센터 1234-5678 (평일 09:00~18:00 / 점심시간 12:00~13:00 /
+                주말 및 공휴일 휴무) |
+              </span>
+            </div>
+            <div>
+              <span>사업자등록번호 123-45-67890 | </span>
+              <span
+                >호스팅서비스제공자 : 마이크로소프트 유한회사,
+                구글클라우드코리아유한회사, 아마존웹서비시즈코리아 유한회사 |
+              </span>
+            </div>
+            <div>
+              <span>통신판매업 신고번호 : 제 2024-성남중원구-0000호 | </span>
+            </div>
+            <div>
+              <span><i>경기 성남시 중원구 상대원동 152-3번지 </i> | </span>
+              <span>"전자우편주소 : "jeeseula@gmail.com |</span>
+            </div>
+            <br />
+            <div>
+              <span>Copyright© CINEPEDIA(주) All rights reserved. | </span>
+            </div>
+          </div>
+          <div class="justify-content-end d-flex p-3">
+            <img src="./images/footerlogo.png" alt="푸터로고" />
+          </div>
+        </div>
+      </footer>
+      <!--푸터 영역 끝-->
+    </div>
+
+    <!--부트스트랩 자바스크립트-->
+    <script src="./javascript/bootstrap.bundle.js"></script>
+    <!--MY 자바스크립트-->
+    <script src="./javascript/script.js"></script>
+  </body>
+</html>

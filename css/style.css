@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+/*영화순위 폰트*/
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/*공통************************************************************/
+
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 13px;
+  }
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.roboto-font {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style: none;
+}
+
+.texthover:hover {
+  font-weight: bold;
+}
+
+.bg-violat {
+  background-color: rgb(90, 10, 90);
+}
+
+.bg-violat-transparent {
+  background-color: rgba(90, 10, 90, 0.7);
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid #333;
+}
+
+/*네비게이션 **********************************************************/
+.nav-link:hover,
+.nav-link.active {
+  color: #fff !important;
+}
+
+@media screen and (max-width: 767px) {
+  #nav-menu {
+    background-color: #000;
+    padding: 1.875rem; /*30px*/
+  }
+  #nav-menu ul li,
+  #nav-menu div {
+    text-align: center;
+    width: 5rem; /*80px*/
+  }
+}
+
+/*푸터  **********************************************************/
+#footer a {
+  color: gray;
+}
+#footer img {
+  filter: grayscale(1);
+}
+
+#footer .footer-text span {
+  font-size: 1rem;
+}
+#footer span {
+  font-size: 0.75rem;
+}
+
+/*슬라이드 **********************************************************/
+/*swiper*/
+#slide-content .swiper-container {
+  width: 100%;
+  padding-top: 4.688rem;
+  /*padding-bottom: 50px; */
+}
+
+#slide-content .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 70%;
+  height: 40vh;
+  /* opacity: 0.5; */
+}
+/* .swiper-slide-active {
+  opacity: 1;
+} */
+
+@media screen and (min-width: 768px) {
+  #slide-content .swiper-slide {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 992px) {
+  #slide-content .swiper-slide {
+    height: 70vh;
+  }
+}
+
+/*무비 리스트 **********************************************************/
+#movielist .card-img-overlay,
+#similar-movie .card-img-overlay {
+  display: none;
+}
+
+/*영화 상세 페이지 *****************************************************/
+/*이미지 하단 검정 그라데이션 추가*/
+#video-banner .image-box {
+  position: relative;
+  z-index: 0;
+}
+
+#video-banner .image-box img {
+  max-height: 80vh;
+}
+
+.slide-img:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 85%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+#review img {
+  object-fit: cover;
+}
+#review .card-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*별점매기기*/
+.star-ratings {
+  display: inline-block;
+  border: 0;
+  margin-right: 15px;
+}
+.star-ratings > input {
+  display: none;
+}
+.star-ratings > label {
+  float: right;
+  color: #aaa;
+}
+.star-ratings > label:before {
+  display: inline-block;
+  font-size: 1.5em;
+  padding: 0.3rem 0.2rem;
+  margin: 0;
+  cursor: pointer;
+  font-family: FontAwesome;
+  content: "\f005 ";
+}
+.star-ratings .half:before {
+  content: "\f089 ";
+  position: absolute;
+  padding-right: 0;
+}
+.star-ratings input:checked ~ label,
+.star-ratings label:hover,
+.star-ratings label:hover ~ label {
+  color: yellow !important;
+}
+.star-ratings input:checked + .star-ratings label:hover,
+.star-ratings input input:checked ~ label:hover,
+.star-ratings input:checked ~ .star-ratings label:hover ~ label,
+.star-ratings label:hover ~ input:checked ~ label {
+  color: yellow !important;
+}
+
+/*위로 올라가는 화살표*/
+.topBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/*무비차트 페이지 *****************************************************/
+#moviechartlist,
+#nowplayinglist,
+#top20list,
+#upcominglist {
+  padding-top: 4.688rem;
+}
