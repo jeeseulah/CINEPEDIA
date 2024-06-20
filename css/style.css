@@ -115,10 +115,43 @@ li {
   }
 }
 
+#slide-content h1 {
+  text-shadow: 1px 1px 2px black;
+}
+
 /*무비 리스트 **********************************************************/
-#movielist .card-img-overlay,
-#similar-movie .card-img-overlay {
+/*card mouseover 효과 주기*/
+/* #movielist .card-img-overlay,
+#similar-movie .card-img-overlay { */
+.card-img-overlay {
   display: none;
+}
+
+/* #movielist .card:hover .card-img-overlay { */
+.card:hover .card-img-overlay {
+  display: block;
+}
+
+#movielist .card:hover img,
+#moviechartlist .card:hover img {
+  opacity: 0.2;
+}
+
+/*포스터 이미지 사이즈 일정하게*/
+#movielist .card,
+#moviechartlist .card {
+  aspect-ratio: 2/3;
+}
+
+#movielist .card-text,
+#moviechartlist .card-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
 }
 
 /*영화 상세 페이지 *****************************************************/
@@ -129,7 +162,7 @@ li {
 }
 
 #video-banner .image-box img {
-  max-height: 80vh;
+  max-height: 90vh;
 }
 
 .slide-img:after {
@@ -148,6 +181,17 @@ li {
   );
 }
 
+/*영화소개글이 6줄이상 넘어가지 않도록*/
+#video-banner .video-detail .card-text > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
 #review img {
   object-fit: cover;
 }
@@ -155,6 +199,16 @@ li {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+/*평점 나오게 하기*/
+.movie-vote > div:before {
+  display: inline-block;
+  font-size: 1.5em;
+  padding: 0.3rem 0.2rem;
+  margin: 0;
+  font-family: FontAwesome;
+  content: "\f005 ";
 }
 
 /*별점매기기*/
