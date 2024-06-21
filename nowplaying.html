@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <title>CINEPEDIA</title>
     <!--부트스트랩-->
     <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" />
@@ -41,7 +43,7 @@
           <!--네비게이션 메뉴-->
           <div class="collapse navbar-collapse nav-underline" id="nav-menu">
             <div class="order-md-last navbar-nav my-2">
-              <a href="#" class="text-light">
+              <a href="./search.html" class="text-light">
                 <i class="bi bi-search fs-4"></i>
               </a>
             </div>
@@ -71,83 +73,16 @@
       </nav>
       <!--네비게이션 영역 끝-->
 
-      <!--상영예정작 시작-->
-      <div id="nowplayinglist" class="bg-black">
+      <!--현재상영작 시작-->
+      <div id="nowplayingList" class="bg-black">
         <div class="container">
-          <div class="d-flex text-light py-5 px-3">
-            <h2 class="fs-2 fw-bold m-0">상영예정작</h2>
+          <div class="d-flex text-light pt-5 pb-4 px-3 border-bottom-gray mb-5">
+            <h2 class="fs-2 fw-bold m-0">현재상영작</h2>
           </div>
-          <div class="row g-3">
-            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
-              <a href="./movie_detail.html">
-                <div class="card text-bg-dark">
-                  <img
-                    src="./images/sample-img1.jpg"
-                    class="img-fluid rounded"
-                    alt="샘플이미지1"
-                  />
-                </div>
-              </a>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
-              <a href="./movie_detail.html">
-                <div class="card text-bg-dark">
-                  <img
-                    src="./images/sample-img2.png"
-                    class="img-fluid rounded"
-                    alt="샘플이미지2"
-                  />
-                </div>
-              </a>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
-              <a href="./movie_detail.html">
-                <div class="card text-bg-dark">
-                  <img
-                    src="./images/sample-img3.jpg"
-                    class="img-fluid rounded"
-                    alt="샘플이미지3"
-                  />
-                </div>
-              </a>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
-              <a href="./movie_detail.html">
-                <div class="card text-bg-dark">
-                  <img
-                    src="./images/sample-img4.jpg"
-                    class="img-fluid rounded"
-                    alt="샘플이미지4"
-                  />
-                </div>
-              </a>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
-              <a href="./movie_detail.html">
-                <div class="card text-bg-dark">
-                  <img
-                    src="./images/sample-img5.jpg"
-                    class="img-fluid rounded"
-                    alt="샘플이미지5"
-                  />
-                </div>
-              </a>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2 mb-5 position-relative">
-              <a href="./movie_detail.html">
-                <div class="card text-bg-dark">
-                  <img
-                    src="./images/sample-img6.jpg"
-                    class="img-fluid rounded"
-                    alt="샘플이미지6"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
+          <div class="row g-3"></div>
         </div>
       </div>
-      <!--상영예정작 끝-->
+      <!--현재상영작 끝-->
 
       <!--푸터 영역 시작-->
       <footer
@@ -210,7 +145,5 @@
     <script src="./javascript/bootstrap.bundle.js"></script>
     <!--API-->
     <script src="./javascript/index.js"></script>
-    <!--MY 자바스크립트-->
-    <script src="./javascript/script.js"></script>
   </body>
 </html>

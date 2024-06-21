@@ -63,7 +63,7 @@
                 <a class="nav-link" href="./upcoming.html">상영예정작</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="./top20.html">역대영화순위</a>
+                <a class="nav-link" href="./top20.html">역대영화순위</a>
               </li>
             </ul>
           </div>
@@ -71,16 +71,29 @@
       </nav>
       <!--네비게이션 영역 끝-->
 
-      <!--역대영화순위 시작-->
-      <div id="top20List" class="bg-black">
+      <!--무비타이틀 시작-->
+      <div id="actorListTitle" class="bg-black"></div>
+      <!--무비타이틀 끝-->
+      <!--배우리스트 시작-->
+      <div id="castList" class="bg-black pt-3">
         <div class="container">
-          <div class="d-flex text-light pt-5 pb-4 px-3 border-bottom-gray mb-5">
-            <h2 class="fs-2 fw-bold m-0">역대영화순위</h2>
+          <div class="d-flex text-light px-3 py-3">
+            <h4 class="fw-bold m-0">배역</h4>
           </div>
           <div class="row g-3"></div>
         </div>
       </div>
-      <!--역대영화순위 끝-->
+      <!--배우리스트 끝-->
+      <!--제작진리스트 시작-->
+      <div id="crewList" class="bg-black">
+        <div class="container">
+          <div class="d-flex text-light px-3 py-3">
+            <h4 class="fw-bold m-0">제작진</h4>
+          </div>
+          <div class="row g-3"></div>
+        </div>
+      </div>
+      <!--제작진리스트 끝-->
 
       <!--푸터 영역 시작-->
       <footer
@@ -142,8 +155,6 @@
     <!--부트스트랩 자바스크립트-->
     <script src="./javascript/bootstrap.bundle.js"></script>
     <!--API-->
-    <script src="./javascript/index.js"></script>
-    <!--MY 자바스크립트-->
-    <script src="./javascript/script.js"></script>
+    <script src="./javascript/movie_detail.js"></script>
   </body>
 </html>

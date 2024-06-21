@@ -121,30 +121,41 @@ li {
 
 /*무비 리스트 **********************************************************/
 /*card mouseover 효과 주기*/
-/* #movielist .card-img-overlay,
-#similar-movie .card-img-overlay { */
 .card-img-overlay {
   display: none;
 }
-
-/* #movielist .card:hover .card-img-overlay { */
 .card:hover .card-img-overlay {
   display: block;
 }
 
 #movielist .card:hover img,
-#moviechartlist .card:hover img {
+#moviechartList .card:hover img,
+#nowplayingList .card:hover img,
+#upcomingList .card:hover img,
+#top20List .card:hover img,
+#recommendList .card:hover img,
+#search .movie_search .card:hover img {
   opacity: 0.2;
 }
 
 /*포스터 이미지 사이즈 일정하게*/
 #movielist .card,
-#moviechartlist .card {
+#moviechartList .card,
+#nowplayingList .card,
+#upcomingList .card,
+#top20List .card,
+#recommendList .card,
+#search .movie_search .card {
   aspect-ratio: 2/3;
 }
 
 #movielist .card-text,
-#moviechartlist .card-text {
+#moviechartList .card-text,
+#nowplayingList .card-text,
+#upcomingList .card-text,
+#top20List .card-text,
+#recommendList .card-text,
+#search .movie_search .card-text {
   text-overflow: ellipsis;
   overflow: hidden;
   word-break: break-word;
@@ -182,7 +193,7 @@ li {
 }
 
 /*영화소개글이 6줄이상 넘어가지 않도록*/
-#video-banner .video-detail .card-text > p {
+#video-banner .card-text > p {
   text-overflow: ellipsis;
   overflow: hidden;
   word-break: break-word;
@@ -192,64 +203,6 @@ li {
   -webkit-box-orient: vertical;
 }
 
-#review img {
-  object-fit: cover;
-}
-#review .card-text {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-/*평점 나오게 하기*/
-.movie-vote > div:before {
-  display: inline-block;
-  font-size: 1.5em;
-  padding: 0.3rem 0.2rem;
-  margin: 0;
-  font-family: FontAwesome;
-  content: "\f005 ";
-}
-
-/*별점매기기*/
-.star-ratings {
-  display: inline-block;
-  border: 0;
-  margin-right: 15px;
-}
-.star-ratings > input {
-  display: none;
-}
-.star-ratings > label {
-  float: right;
-  color: #aaa;
-}
-.star-ratings > label:before {
-  display: inline-block;
-  font-size: 1.5em;
-  padding: 0.3rem 0.2rem;
-  margin: 0;
-  cursor: pointer;
-  font-family: FontAwesome;
-  content: "\f005 ";
-}
-.star-ratings .half:before {
-  content: "\f089 ";
-  position: absolute;
-  padding-right: 0;
-}
-.star-ratings input:checked ~ label,
-.star-ratings label:hover,
-.star-ratings label:hover ~ label {
-  color: yellow !important;
-}
-.star-ratings input:checked + .star-ratings label:hover,
-.star-ratings input input:checked ~ label:hover,
-.star-ratings input:checked ~ .star-ratings label:hover ~ label,
-.star-ratings label:hover ~ input:checked ~ label {
-  color: yellow !important;
-}
-
 /*위로 올라가는 화살표*/
 .topBtn {
   position: fixed;
@@ -257,10 +210,44 @@ li {
   right: 0;
 }
 
+/*배우리스트 페이지 *****************************************************/
+#actorListTitle {
+  height: 200px;
+}
+#actorListTitle h2 {
+  text-shadow: 1px 1px 2px black;
+}
+
+#actor .card img,
+#castList .card img,
+#crewList .card img,
+#search .person_search .card img {
+  aspect-ratio: 2/3;
+  transition: transform 0.7s;
+}
+#actor .card img:hover,
+#castList .card img:hover,
+#crewList .card img:hover,
+#search .person_search .card img:hover {
+  transform: scale(1.1);
+}
+
 /*무비차트 페이지 *****************************************************/
-#moviechartlist,
-#nowplayinglist,
-#top20list,
-#upcominglist {
+#moviechartList,
+#nowplayingList,
+#upcomingList,
+#top20List,
+#actorListTitle,
+#search {
   padding-top: 4.688rem;
 }
+
+/*search 페이지 *****************************************************/
+#search input::placeholder {
+  color: gray;
+  font-size: 1.3rem;
+}
+
+/* #search .recent_search {
+  height: 80vh;
+} */

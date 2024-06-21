@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <title>CINEPEDIA</title>
     <!--swiper-->
     <link
@@ -51,7 +53,7 @@
           <!--네비게이션 메뉴-->
           <div class="collapse navbar-collapse nav-underline" id="nav-menu">
             <div class="order-md-last navbar-nav my-2">
-              <a href="#" class="text-light">
+              <a href="./search.html" class="text-light">
                 <i class="bi bi-search fs-4"></i>
               </a>
             </div>
@@ -85,7 +87,34 @@
           <div class="card border-0 bg-black">
             <div class="row g-0">
               <div class="col-md-6 col-lg-8">
-                <div class="video-detail card-body text-light"></div>
+                <div class="card-body text-light">
+                  <!--별점-->
+                  <div
+                    id="movieScope"
+                    class="movie-vote d-inline-block border-0"
+                  ></div>
+                  <!--영화제목-->
+                  <div id="movieTitle" class="display-3 fw-bold pb-3"></div>
+                  <!--등급-->
+                  <div
+                    id="movieInfo"
+                    class="fs-5 text-white-50 d-flex flex-wrap"
+                  >
+                    <!--span class="bg-warning fw-bold px-1 m-1 rounded text-light">12</span-->
+                  </div>
+                  <!--재생버튼-->
+                  <div class="my-3 d-flex">
+                    <button
+                      id="movieShare"
+                      class="btn bg-violat bg-gradient px-5 py-3 fs-4 fw-bold text-light"
+                      type="submit"
+                    >
+                      공유하기
+                    </button>
+                  </div>
+                  <!--소개글-->
+                  <div id="movieIntro" class="card-text text-white-50"></div>
+                </div>
               </div>
               <div
                 class="video-detail-img col-md-6 col-lg-4 d-none d-md-flex justify-content-center p-4"
@@ -100,32 +129,35 @@
         <div class="container">
           <ul class="nav nav-underline nav-fill nav-justified border-bottom">
             <li class="nav-item">
+              <a class="nav-link text-white-50" href="#moviePlay">관련영상</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link text-white-50" href="#actor">감독/출연</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white-50" href="#viewing">관람평</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#review">리뷰</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#similar-movie"
-                >관련검색</a
+              <a class="nav-link text-white-50" href="#recommendList"
+                >추천영화</a
               >
             </li>
           </ul>
         </div>
       </div>
       <!--영화 탭 끝-->
+
       <div data-bs-spy="scroll" data-bs-target="#tab">
+        <!--관련영상 시작-->
+        <div id="moviePlay">
+          <div class="container pt-5 pb-3 border-bottom-gray text-light">
+            <div class="px-3 pb-4">
+              <h2 class="fs-2 fw-bold m-0">관련영상</h2>
+            </div>
+            <div id="movieVideo" class="text-white-50"></div>
+          </div>
+        </div>
+        <!--관련영상 끝-->
         <!--감독/출연 리스트 시작-->
         <div id="actor" class="container pt-5 pb-5 border-bottom-gray">
-          <div class="d-flex px-3 pb-4 text-light">
-            <h2 class="fs-2 fw-bold m-0">감독/출연</h2>
-            <a href="./top20.html" class="ms-auto mt-2 text-white-50 texthover"
-              >더보기 ></a
-            >
-          </div>
+          <div class="moreList d-flex px-3 pb-4 text-light"></div>
           <div class="swiper-container overflow-hidden position-relative">
             <div class="swiper-wrapper"></div>
             <!-- Add Scrollbar -->
@@ -135,468 +167,20 @@
           </div>
         </div>
         <!--감독/출연 리스트 끝-->
-        <!--관람평 리스트 시작-->
-        <div id="viewing">
-          <div class="container pt-5 pb-3 border-bottom-gray text-light">
-            <div class="px-3 pb-3">
-              <h2 class="fs-2 fw-bold m-0">관람평</h2>
-            </div>
-            <div>
-              <p class="text-center pt-3">별점을 선택해 주세요.</p>
-              <!--별점-->
-              <div class="d-flex justify-content-center">
-                <fieldset class="ms-3 star-ratings">
-                  <input
-                    type="radio"
-                    id="rating10"
-                    name="rating"
-                    value="10"
-                  /><label for="rating10" title="5점"></label>
-                  <input
-                    type="radio"
-                    id="rating9"
-                    name="rating"
-                    value="9"
-                  /><label class="half" for="rating9" title="4.5점"></label>
-                  <input
-                    type="radio"
-                    id="rating8"
-                    name="rating"
-                    value="8"
-                  /><label for="rating8" title="4점"></label>
-                  <input
-                    type="radio"
-                    id="rating7"
-                    name="rating"
-                    value="7"
-                  /><label class="half" for="rating7" title="3.5점"></label>
-                  <input
-                    type="radio"
-                    id="rating6"
-                    name="rating"
-                    value="6"
-                  /><label for="rating6" title="3점"></label>
-                  <input
-                    type="radio"
-                    id="rating5"
-                    name="rating"
-                    value="5"
-                  /><label class="half" for="rating5" title="2.5점"></label>
-                  <input
-                    type="radio"
-                    id="rating4"
-                    name="rating"
-                    value="4"
-                  /><label for="rating4" title="2점"></label>
-                  <input
-                    type="radio"
-                    id="rating3"
-                    name="rating"
-                    value="3"
-                  /><label class="half" for="rating3" title="1.5점"></label>
-                  <input
-                    type="radio"
-                    id="rating2"
-                    name="rating"
-                    value="2"
-                  /><label for="rating2" title="1점"></label>
-                  <input
-                    type="radio"
-                    id="rating1"
-                    name="rating"
-                    value="1"
-                  /><label class="half" for="rating1" title="0.5점"></label>
-                </fieldset>
-              </div>
-              <!--관람평 남기기-->
-              <div class="my-4 d-flex justify-content-center">
-                <button
-                  class="btn bg-violat bg-gradient px-5 py-3 fs-5 fw-bold text-light rounded-5"
-                  type="submit"
-                >
-                  관람평 남기기
-                </button>
-              </div>
-              <!--관람평 목록-->
-              <div class="my-4 pt-4">
-                <span class="fw-bold p-3"
-                  ><i class="bi bi-chat-dots"></i> 관람평 목록</span
-                >
-                <div class="card mt-3 text-bg-dark">
-                  <div class="card-body">
-                    <div class="card-text">댓글</div>
-                    <div class="d-flex justify-content-end">
-                      <div class="badge text-white-50 p-2 text-start">
-                        <small>글쓴이 2024-05-25</small>
-                        <a class="btn btn-outline-secondary btn-sm ms-1"
-                          >수정</a
-                        >
-                        <a class="btn btn-outline-secondary btn-sm ms-1"
-                          >삭제</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--관람평 리스트 끝-->
-        <!--리뷰 리스트 시작-->
-        <div id="review">
-          <div class="container pt-5 pb-3 border-bottom-gray text-light">
-            <div class="px-3 pb-3">
-              <h2 class="fs-2 fw-bold m-0">리뷰</h2>
-            </div>
-            <div>
-              <!--게시판 리스트-->
-              <div class="list-group list-group-flush">
-                <a
-                  href="#"
-                  class="list-group-item list-group-item-action bg-black"
-                >
-                  <div class="card bg-black">
-                    <div class="row g-0 py-2">
-                      <div
-                        class="col-4 col-md-2 d-flex justify-content-center py-3"
-                      >
-                        <img
-                          src="./images/review-sample1.jpg"
-                          class="img-fluid rounded"
-                          alt="게시판샘플이미지1"
-                        />
-                      </div>
-                      <div class="col-8 col-md-10">
-                        <div class="card-body text-light">
-                          <h5 class="card-title">게시판페이지 제목입니다.</h5>
-                          <p class="card-text">
-                            This is a wider card with supporting text below as a
-                            natural lead-in to additional content. This content
-                            is a little bit longer.
-                          </p>
-                          <div>
-                            <small>홍길동</small>
-                            <small>
-                              / <i class="bi bi-clock"></i> 2024-05-17
-                            </small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row g-0 py-2">
-                      <div
-                        class="col-4 col-md-2 d-flex justify-content-center py-3"
-                      >
-                        <img
-                          src="./images/review-sample1.jpg"
-                          class="img-fluid rounded"
-                          alt="게시판샘플이미지1"
-                        />
-                      </div>
-                      <div class="col-8 col-md-10">
-                        <div class="card-body text-light">
-                          <h5 class="card-title">게시판페이지 제목입니다.</h5>
-                          <p class="card-text">
-                            This is a wider card with supporting text below as a
-                            natural lead-in to additional content. This content
-                            is a little bit longer.
-                          </p>
-                          <p class="card-text" style="font-size: 12px">
-                            <span>홍길동</span>
-                            <span>
-                              / <i class="bi bi-clock"></i> 2024-05-17
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--리뷰 리스트 끝-->
         <!--관련검색 리스트 시작-->
-        <div id="similar-movie" class="container py-5 border-bottom-gray">
-          <div class="d-flex px-3 pb-4 text-light">
-            <h2 class="fs-2 fw-bold m-0">관련검색</h2>
-            <a href="./top20.html" class="ms-auto mt-2 text-white-50 texthover"
-              >더보기 ></a
-            >
-          </div>
-          <div class="swiper-container overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img1.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지1"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img2.png"
-                      class="img-fluid rounded"
-                      alt="샘플이미지2"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img3.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지3"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img4.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지4"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img5.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지5"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img6.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지6"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img1.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지1"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img2.png"
-                      class="img-fluid rounded"
-                      alt="샘플이미지2"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img3.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지3"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img4.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지4"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img5.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지5"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide position-relative">
-                <a href="./movie_detail.html">
-                  <div class="card text-bg-dark">
-                    <img
-                      src="./images/sample-img6.jpg"
-                      class="img-fluid rounded"
-                      alt="샘플이미지6"
-                    />
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small>Last updated 3 mins ago</small>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
+        <div id="recommendList" class="container py-5 border-bottom-gray">
+          <div class="moreList d-flex px-3 pb-4 text-light"></div>
+          <div class="swiper-container overflow-hidden position-relative">
+            <div class="swiper-wrapper"></div>
+            <!-- Add Scrollbar -->
+            <div
+              class="swiper-scrollbar bg-secondary position-absolute bottom-0"
+            ></div>
           </div>
         </div>
         <!--관련검색 리스트 끝-->
       </div>
+
       <!--푸터 영역 시작-->
       <footer
         id="footer"
@@ -666,6 +250,6 @@
     <!--부트스트랩 자바스크립트-->
     <script src="./javascript/bootstrap.bundle.js"></script>
     <!--API-->
-    <script src="./javascript/index.js"></script>
+    <script src="./javascript/movie_detail.js"></script>
   </body>
 </html>
