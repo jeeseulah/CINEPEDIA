@@ -1,6 +1,6 @@
 # 🎥CINEPEDIA
 
-![logo_violat_gra](https://github.com/jeeseulah/CINEPEDIA/assets/165135312/8c6c40c7-c859-4114-bdd6-bbe96aa00377)
+![mainlogo](https://github.com/jeeseulah/CINEPEDIA/assets/165135312/108c31fc-8184-4580-8976-11ff6a8734ac)
 
 <h3>영화에 대한 지식이나 정보를 제공하는 플랫폼 "CinePedia"</h3>
 "CinePedia"는 "Cine"는 "영화"를 의미하는 라틴어 단어이며, "pedia"는 "백과사전"을 의미하는 그리스어 접미사입니다.<br />
