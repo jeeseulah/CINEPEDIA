@@ -85,6 +85,7 @@ const updateMovieDetail = (movieData) => {
   const movieTitle = document.querySelector("#movieTitle");
   const movieInfo = document.querySelector("#movieInfo");
   const movieIntro = document.querySelector("#movieIntro");
+  const movieIntroBtn = document.querySelector(".movieIntroBtn");
   const movieShareBtn = document.querySelector("#movieShare");
   const videoDetailImg = document.querySelector(
     "#video-banner .video-detail-img"
@@ -122,41 +123,43 @@ const updateMovieDetail = (movieData) => {
       "</span>";
   }
   //영화배너
-  if (videoBannerImg != null) {
-    videoBannerImg.innerHTML = `<img src="${defaultImgUrl}${movieData.backdrop_path}" class="w-100" alt="배너이미지" />
+  videoBannerImg.innerHTML = `<img src="${defaultImgUrl}${movieData.backdrop_path}" class="w-100" alt="배너이미지" />
           <div class="slide-img"></div>`;
-  }
+
   //공유하기
-  if (movieShareBtn != null) {
-    movieShareBtn.addEventListener("click", function () {
-      window.navigator.share({
-        title: `${movieData.title}`, // 공유될 제목
-        text: `${movieData.overview}`, // 공유될 설명
-        url: window.location.href, // 공유될 URL
-      });
+  movieShareBtn.addEventListener("click", () => {
+    window.navigator.share({
+      title: `${movieData.title}`, // 공유될 제목
+      text: `${movieData.overview}`, // 공유될 설명
+      url: window.location.href, // 공유될 URL
     });
-  }
+  });
+
   //별점
-  if (movieScope != null) {
-    movieScope.innerHTML = `${vote_average_innerHtml}`;
-  }
+  movieScope.innerHTML = `${vote_average_innerHtml}`;
+
   //영화제목
-  if (movieTitle != null) {
-    movieTitle.innerHTML = `${movieData.title}<span class="display-6 fw-bold">(${release_date[0]})</span>`;
-  }
+  movieTitle.innerHTML = `${movieData.title}<span class="display-6 fw-bold">(${release_date[0]})</span>`;
+
   //영화정보
-  if (movieInfo != null) {
-    movieInfo.innerHTML = `${videoGenres_innerHtml}<span class="border border-secondary px-1 m-1 rounded">${movieData.runtime}분</span>`;
-  }
+  movieInfo.innerHTML = `${videoGenres_innerHtml}<span class="border border-secondary px-1 m-1 rounded">${movieData.runtime}분</span>`;
+
   //영화소개
-  if (movieIntro != null) {
-    movieIntro.innerHTML = `<p>개봉일 : ${movieData.release_date}</p>
-      <h4 class="pb-3"><i>"${movieData.tagline}"</i></h4><p>${movieData.overview}</p>`;
-  }
-  if (videoDetailImg != null) {
-    videoDetailImg.innerHTML = `<img src="${defaultImgUrl}${movieData.poster_path}"
+  movieIntro.innerHTML = `<p>개봉일 : ${movieData.release_date}</p>
+      <h4 class="pb-1"><i>"${movieData.tagline}"</i></h4><p class="m-0">${movieData.overview}</p>`;
+  movieIntroBtn.addEventListener("click", () => {
+    if (movieIntro.classList.contains("active")) {
+      movieIntro.classList.remove("active");
+      movieIntroBtn.innerHTML = '닫기<i class="bi bi-caret-up-fill ms-1"></i>';
+    } else {
+      movieIntro.classList.add("active");
+      movieIntroBtn.innerHTML =
+        '더보기<i class="bi bi-caret-down-fill ms-1"></i>';
+    }
+  });
+
+  videoDetailImg.innerHTML = `<img src="${defaultImgUrl}${movieData.poster_path}"
               class="img-fluid rounded h-100 object-fit-cover" alt="영화 상세 이미지"/>`;
-  }
 };
 
 // 영화 비디오 HTML
@@ -269,7 +272,7 @@ const initSwipers = () => {
 
 //무비디테일페이지 ///////////////////////////////////////////////
 //위로 올라가는 버튼 숨기기
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", () => {
   const topBtn = document.getElementById("topBtn");
   const movieTabPst = document.getElementById("tab").offsetTop; // #tab요소의 위치 저장
   // mouse scroll시

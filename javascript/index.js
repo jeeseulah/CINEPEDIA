@@ -112,12 +112,15 @@ const loadMovieListShort = async (listType) => {
     const movieBrief = movieData.results;
     if (movieBrief.length > 0) {
       movieBrief.forEach((movie, index) => {
+        const movieImg = movie.poster_path
+          ? `${defaultImgUrl}${movie.poster_path}`
+          : "./images/blank-movie.png";
         movieListContainer.innerHTML +=
           `
             <div class="swiper-slide position-relative">
                 <a href="./movie_detail.html?movieId=${movie.id}">
                     <div class="card text-bg-dark">
-                        <img src="${defaultImgUrl}${movie.poster_path}"
+                        <img src="${movieImg}"
                             class="img-fluid rounded h-100 object-fit-cover" alt="무비차트"/>
                         <div class="card-img-overlay">
                             <small class="card-text"><i class="bi bi-star-fill text-warning me-2"></i>${movie.vote_average}</small>
@@ -164,11 +167,14 @@ const loadMovieList = async (listType, containerId) => {
     const movieBrief = movieData.results.slice(0, 18);
     if (movieBrief.length > 0) {
       movieBrief.forEach((movie) => {
+        const movieImg = movie.poster_path
+          ? `${defaultImgUrl}${movie.poster_path}`
+          : "./images/blank-movie.png";
         movieListContainer.innerHTML += `
             <div class="col-4 col-md-3 col-lg-2 mb-5">
                 <a href="./movie_detail.html?movieId=${movie.id}">
                     <div class="card bg-black">
-                        <img src="${defaultImgUrl}${movie.poster_path}"
+                        <img src="${movieImg}"
                             class="img-fluid rounded h-100 object-fit-cover"
                             alt="무비리스트"/>
                         <div class="card-img-overlay text-light">

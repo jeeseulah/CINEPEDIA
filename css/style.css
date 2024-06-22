@@ -174,6 +174,7 @@ li {
 #upComingList,
 #top20List,
 #actorListTitle,
+#video-banner,
 #search {
   padding-top: 4.688rem;
 }
@@ -206,7 +207,7 @@ li {
 }
 
 /*영화소개글이 6줄이상 넘어가지 않도록*/
-#video-banner .card-text > p {
+#movieIntro.active > p {
   text-overflow: ellipsis;
   overflow: hidden;
   word-break: break-word;
