@@ -49,13 +49,13 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./moviechart.html">무비차트</a>
+                <a class="nav-link" href="./movieChart.html">무비차트</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./nowplaying.html">현재상영작</a>
+                <a class="nav-link" href="./nowPlaying.html">현재상영작</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./upcoming.html">상영예정작</a>
+                <a class="nav-link" href="./upComing.html">상영예정작</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./top20.html">역대영화순위</a>
@@ -72,7 +72,7 @@
           <form class="search-check input-group px-3">
             <input
               type="text"
-              class="search-text form-control border-0 bg-black border-bottom border-white text-light fs-3"
+              class="search-text form-control border-0 bg-black border-bottom border-white text-light fs-4"
               placeholder="제목, 인물명을 입력해보세요."
               aria-describedby="button-addon2"
             />
@@ -81,12 +81,22 @@
               type="submit"
               id="button-addon2"
             >
-              <i class="bi bi-search fs-2"></i>
+              <i class="bi bi-search fs-3"></i>
             </button>
           </form>
           <div class="recent_search row g-3 py-5">
-            <div class="text-white-50 px-5 fs-5 mb-5" style="height: 40vh">
-              최근 검색어
+            <div class="text-light px-5 pt-4 mb-5">
+              <div class="d-flex">
+                <h4 class="pb-3 m-0">최근검색어</h4>
+                <button
+                  class="all-clear btn btn-black btn-sm text-white-50 mb-3 ms-auto d-none"
+                >
+                  모두 지우기<i class="bi bi-x-circle ms-2 align-middle"></i>
+                </button>
+              </div>
+              <div>
+                <ul class="search-list"></ul>
+              </div>
             </div>
           </div>
         </div>

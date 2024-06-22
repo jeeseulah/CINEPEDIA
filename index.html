@@ -62,13 +62,13 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./moviechart.html">무비차트</a>
+                <a class="nav-link" href="./movieChart.html">무비차트</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./nowplaying.html">현재상영작</a>
+                <a class="nav-link" href="./nowPlaying.html">현재상영작</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./upcoming.html">상영예정작</a>
+                <a class="nav-link" href="./upComing.html">상영예정작</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./top20.html">역대영화순위</a>
@@ -103,13 +103,23 @@
                 05.12 ~ 05.18 기준
               </p>
               <a
-                href="./moviechart.html"
+                href="./movieChart.html"
                 class="ms-auto mt-2 text-white-50 texthover"
                 >더보기 ></a
               >
             </div>
-            <div id="moviechart" class="swiper-container overflow-hidden">
+            <div
+              id="movieChart"
+              class="swiper-container overflow-hidden position-relative"
+            >
               <div class="swiper-wrapper"></div>
+              <!-- Add Arrows -->
+              <div
+                class="swiper-button-next position-absolute bottom-0 text-light bg-secondary bg-opacity-50 d-none"
+              ></div>
+              <div
+                class="swiper-button-prev position-absolute bottom-0 text-light bg-secondary bg-opacity-50 d-none"
+              ></div>
             </div>
           </div>
           <!--무비차트 끝-->
@@ -118,13 +128,23 @@
             <div class="d-flex p-3 text-light">
               <h2 class="fs-2 fw-bold m-0">현재상영작</h2>
               <a
-                href="./nowplaying.html"
+                href="./nowPlaying.html"
                 class="ms-auto mt-2 text-white-50 texthover"
                 >더보기 ></a
               >
             </div>
-            <div id="nowplaying" class="swiper-container overflow-hidden">
+            <div
+              id="nowPlaying"
+              class="swiper-container overflow-hidden position-relative"
+            >
               <div class="swiper-wrapper"></div>
+              <!-- Add Arrows -->
+              <div
+                class="swiper-button-next position-absolute bottom-0 text-light bg-secondary bg-opacity-50 d-none"
+              ></div>
+              <div
+                class="swiper-button-prev position-absolute bottom-0 text-light bg-secondary bg-opacity-50 d-none"
+              ></div>
             </div>
           </div>
           <!--현재상영작 끝-->
@@ -133,13 +153,23 @@
             <div class="d-flex p-3 text-light">
               <h2 class="fs-2 fw-bold m-0">상영예정작</h2>
               <a
-                href="./upcoming.html"
+                href="./upComing.html"
                 class="ms-auto mt-2 text-white-50 texthover"
                 >더보기 ></a
               >
             </div>
-            <div id="upcoming" class="swiper-container overflow-hidden">
+            <div
+              id="upComing"
+              class="swiper-container overflow-hidden position-relative"
+            >
               <div class="swiper-wrapper"></div>
+              <!-- Add Arrows -->
+              <div
+                class="swiper-button-next position-absolute bottom-0 text-light bg-secondary bg-opacity-50 d-none"
+              ></div>
+              <div
+                class="swiper-button-prev position-absolute bottom-0 text-light bg-secondary bg-opacity-50 d-none"
+              ></div>
             </div>
           </div>
           <!--상영예정작 끝-->
@@ -153,18 +183,28 @@
                 >더보기 ></a
               >
             </div>
-            <div id="top20" class="swiper-container overflow-hidden">
+            <div
+              id="top20"
+              class="swiper-container overflow-hidden position-relative"
+            >
               <div class="swiper-wrapper"></div>
+              <!-- Add Arrows -->
+              <div
+                class="swiper-button-next position-absolute bottom-0 text-light bg-secondary bg-opacity-50 d-none"
+              ></div>
+              <div
+                class="swiper-button-prev position-absolute bottom-0 text-light bg-secondary bg-opacity-50 d-none"
+              ></div>
             </div>
           </div>
           <!--TOP20 끝-->
           <!--공지 시작-->
           <div class="pt-4 pb-2">
             <div class="d-flex bg-dark opacity-75 rounded">
-              <a href="#" class="fs-6 m-3 text-white-50">공지사항</a>
-              <a href="#" class="fs-6 m-3 text-light texthover">
-                영화 이벤트 서비스 종료 안내 (24년 6월 18일 24시)
-              </a>
+              <div class="fs-6 m-3 text-white-50">공지사항</div>
+              <ul class="fs-6 m-3 text-light">
+                <li>영화 서비스 시작 안내 (24년 6월 22일 24시)</li>
+              </ul>
               <button type="button" class="btn btn-dark ms-auto">
                 <i class="bi bi-chevron-right fs-4"></i>
               </button>
