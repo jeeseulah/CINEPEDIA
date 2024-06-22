@@ -167,7 +167,7 @@ const updateMovieVideo = (movieData) => {
     const videoURL = `https://www.youtube.com/embed/${movieData.results[0].key}`;
     //트레일러 영상
     moviePlay.innerHTML = `
-            <div class="ratio ratio-21x9 mb-4">
+            <div class="ratio ratio-16x9 mb-4">
                 <iframe
                     src="${videoURL}"
                     title="Youtube video player"
