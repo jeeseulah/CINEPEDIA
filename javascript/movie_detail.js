@@ -132,7 +132,7 @@ const updateMovieDetail = (movieData) => {
       window.navigator.share({
         title: `${movieData.title}`, // 공유될 제목
         text: `${movieData.overview}`, // 공유될 설명
-        url: `${defaultImgUrl}${movieData.poster_path}`, // 공유될 URL
+        url: window.location.href, // 공유될 URL
       });
     });
   }
