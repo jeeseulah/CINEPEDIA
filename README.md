@@ -55,6 +55,7 @@
 <h3>Design</h3>
 <p>
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/>&nbsp
+  <img src="https://img.shields.io/badge/Canva-00C4CC?style=flat-square&logo=canva&logoColor=white"/>&nbsp
 </p>
 <br/>
 
