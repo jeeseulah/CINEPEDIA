@@ -123,7 +123,7 @@ const updateMovieDetail = (movieData) => {
       "</span>";
   }
   //영화배너
-  videoBannerImg.innerHTML = `<img src="${defaultImgUrl}${movieData.backdrop_path}" class="w-100" alt="배너이미지" />
+  videoBannerImg.innerHTML = `<img src="${defaultImgUrl}${movieData.backdrop_path}" class="w-100 object-fit-cover" alt="배너이미지" />
           <div class="slide-img"></div>`;
 
   //공유하기
