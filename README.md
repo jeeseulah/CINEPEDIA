@@ -163,6 +163,7 @@
 ![트레일러](https://github.com/jeeseulah/CINEPEDIA/assets/165135312/834767ee-2c7f-424b-848e-b0a9f899db9b)
 
 - 해당 영화의 트레일러 영상을 영화 상세 설명 하단에 바로 시청할 수 있도록 구현했습니다.
+- 트레일러 영상이 없을 경우에는 "영상이 아직 등록되지 않았습니다" 메시지가 나타납니다.
 
 ### 9) 위로 scroll 기능
 
@@ -204,19 +205,195 @@
 ## 2. ✴️ 핵심 코드
 
 <details>
-    <summary><b>2-(1) 주어진 API에서 데이터 필터링하기</b></summary>
-```json
+    <summary><b>2-(1) 주어진 API에서 데이터 가져오기</b></summary>
 
-````
+- TMDB API는 movieChart, nowPlaying, upComing, top20의 리스트 유형이 각각 다른 URL값을 요구합니다. 이에 따라 "listType"을 설정하여 switch문을 통해 해당 API를 가져올 수 있도록 구현했습니다.
 
 ```jsx
-
-````
+// index.js ------------------------------------------------------------------
+const getMovieList = async (listType, pageNum = 1) => {
+  let movieListUrl = "";
+  switch (listType) {
+    // 무비차트 (인기영화)
+    case "movieChart":
+      movieListUrl = `${defaultUrl}movie/popular?language=ko-KR&page=${pageNum}`;
+      break;
+    // 현재상영작
+    case "nowPlaying":
+      movieListUrl = `${defaultUrl}movie/now_playing?language=ko-KR&page=${pageNum}`;
+      break;
+    // 상영예정작
+    case "upComing":
+      movieListUrl = `${defaultUrl}movie/upcoming?language=ko-KR&page=${pageNum}`;
+      break;
+    // TOP20 (높은 평점의 인기 영화)
+    case "top20":
+      movieListUrl = `${defaultUrl}movie/top_rated?language=ko-KR&page=${pageNum}`;
+      break;
+  }
+  let response = await fetch(movieListUrl, options);
+  return await response.json();
+};
+```
 
 </details>
-<details><summary><b>2-(2) 별점 표시 </b></summary></details>
-<details><summary><b>2-(3) 더보기</b></summary></details>
-<details><summary><b>2-(4) 최근검색어 기능 구현하기</b></summary></details>
+<details>
+    <summary><b>2-(2) 공유하기</b></summary>
+
+- "공유하기" 버튼을 클릭했을 때, 사용자의 브라우저가 공유 기능을 지원 하는 경우 해당 영화 정보를 공유할 수 있도록 구현했습니다.
+- `window.navigator.share()`메서드를 사용하여 웹 플랫폼의 공유 기능을 호출합니다. 이 메서드는 사용자가 선택한 공유 대상에 따라 텍스트, 제목, url을 포함하여 데이터를 공유합니다.
+- url에는 `window.location.href`로 설정하여 현재 페이지를 공유 url로 설정했습니다.
+
+```jsx
+// movie_detail.js -----------------------------------------------------------
+//공유하기
+movieShareBtn.addEventListener("click", () => {
+  window.navigator.share({
+    title: `${movieData.title}`, // 공유될 제목
+    text: `${movieData.overview}`, // 공유될 설명
+    url: window.location.href, // 공유될 URL
+  });
+});
+```
+
+</details>
+<details>
+  <summary><b>2-(3) 별점 표시 </b></summary>
+
+- 영화 데이터에서 받아온 `vote_average`(평점) 값을 기반으로 별점을 시각적으로 표현하는 HTML 문자열을 생성하는 코드 입니다.
+  - `vote_average` : 영화의 평점을 10점 만점에서 받아왔으며, 이를 5점 만점으로 변환하기 위해 2로 나누어 `vote_average`에 저장합니다.
+  - `vote_average_remain` : 반별을 표시하기 위해 `vote_average`에서 정수 부분을 뺀 나머지 값을 계산 했습니다.
+- 반복문을 통해 총 5개의 별 아이콘을 생성합니다.
+  - `Math.floor(vote_average)` : `vote_average`의 정수 부분만큼 꽉찬별 아이콘을 추가합니다.
+  - `vote_average_remain >= 0.5` : 평점 0.5 이상인 경우 반복문의 현재 위치에 반별 아이콘을 추가합니다.
+  - 그 외의 경우에는 빈별 아이콘을 추가합니다.
+
+```jsx
+// movie_detail.js -----------------------------------------------------------
+// 평점 별표시 (10점만점을 별5개로 표현)
+const vote_average = movieData.vote_average / 2.0;
+const vote_average_remain = vote_average - Math.floor(vote_average);
+let vote_average_innerHtml = "";
+for (let i = 0; i < 5; i++) {
+  if (i < Math.floor(vote_average))
+    vote_average_innerHtml +=
+      '<i class="bi bi-star-fill text-warning fs-2"></i>';
+  else if (i === Math.floor(vote_average)) {
+    if (vote_average_remain >= 0.5) {
+      vote_average_innerHtml +=
+        '<i class="bi bi-star-half text-warning fs-2"></i>';
+    } else {
+      vote_average_innerHtml += '<i class="bi bi-star text-warning fs-2"></i>';
+    }
+  } else {
+    vote_average_innerHtml += '<i class="bi bi-star text-warning fs-2"></i>';
+  }
+}
+```
+
+</details>
+<details>
+  <summary><b>2-(4) 최근검색어 기능 구현하기</b></summary>
+
+- 검색 기능을 키보드의 "Enter" 키와 마우스 "click"으로 모두 실행할 수 있도록, 이벤트리스너를 "click"이 아닌 Form태그를 사용하여 "submit"을 사용하는 방식으로 구현했습니다.
+- `e.preventDefault();` : 이벤트 객체(e)의 기본 동작을 취소합니다. form이 submit됐을 때 페이지가 리로드되는 동작을 막습니다.
+- `initMovieSearchPage(searchValue);` : `initMovieSearchPage` 함수를 호출하여 검색된 영화의 결과를 표시하도록 했습니다.
+- `addKeyword(searchValue);` : `addKeyword` 함수를 호출하여 최근 검색어 목록에 검색어를 추가합니다.
+
+```jsx
+// search.js -----------------------------------------------------------------
+// 검색버튼 event시 값 전달
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // form태그의 submit에 의해 발생한 리로드가 실행되지 않도록
+  const searchValue = document.querySelector(".search-text").value;
+  console.log("searchValue : ", searchValue);
+  initMovieSearchPage(searchValue); // 영화 검색
+  addKeyword(searchValue); // 최근 검색어에 추가함
+});
+```
+
+- 사용자가 입력한 검색어를 최근 검색어 목록에 추가하는 기능을 수행합니다.
+- `getItem()`메서드의 반환 값이 null인 경우를 대비해 `|| "[]"`를 사용하여, `keywords`데이터가 존재하지 않을 때에는 빈 배열(`[]`)을 기본값으로 설정합니다.
+- 새로운 검색어 객체 (`newKeyword`)를 기존의 검색어 배열(`keywords`)의 앞에 추가하여, 업데이트 된 최근 검색어 목록을 만듭니다.
+- `JSON.stringify()`를 사용하여 배열을 JSON문자열로 변환하여 localStorage에 저장합니다.
+- 이렇게 함으로써 최근 검색어 목록이 계속해서 유지되며, 다음 검색 시에도 이 목록에 새로운 검색어가 추가 됩니다.
+
+```jsx
+// search.js -----------------------------------------------------------------
+// 새로운 검색어 로컬에 저장
+const addKeyword = (text) => {
+  const keywords = JSON.parse(localStorage.getItem("keywords") || "[]");
+  //"[]"해줘야함. 새로고침 후 keywords값이 null이 되기때문
+  const newKeyword = {
+    id: Date.now(),
+    text: text,
+  };
+  const updatedKeywords = [newKeyword, ...keywords];
+  localStorage.setItem("keywords", JSON.stringify(updatedKeywords));
+};
+```
+
+- 최근 검색어 목록을 localStorage에서 가져와서 화면에 출력하는 기능을 구현한 부분입니다.
+- `searchListContainer.innerHTML = "";` : 검색어 목록을 출력하는 내용을 초기화합니다. 단일 검색어 삭제 후 목록을 업데이트 할 때 사용됩니다.
+- 검색어 목록이 없을 경우를 대비해 HTML에 안내문구를 표시하기 위해서 `if (keywordsList.length > 0)`을 사용하였습니다.
+- `onclick="deleteKeyword(${element.id})"` : 해당 검색어 삭제를 위해 추가했습니다.
+
+```jsx
+// search.js -----------------------------------------------------------------
+// 최근 검색어 표시하기
+const getKeyword = () => {
+  searchListContainer.innerHTML = "";
+  // 단일 삭제 후 li list를 새롭게 update하기 위해 필요
+
+  const keywordsList = JSON.parse(localStorage.getItem("keywords") || "[]");
+  //"[]" 꼭! 해줘야 함. 새로고침 시 동작안함
+  console.log("검색리스트", keywordsList);
+
+  if (keywordsList.length > 0) {
+    keywordsList.forEach((element) => {
+      searchListContainer.innerHTML += `
+        <li>${element.text}
+            <button class="btn btn-black btn-sm text-white-50 ms-auto" onclick="deleteKeyword(${element.id})">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </li>`;
+    });
+    allClearButton.classList.remove("d-none");
+  } else {
+    searchListContainer.innerHTML =
+      '<p class="text-white-50 pt-3">검색 내역이 없습니다.</p>';
+    allClearButton.classList.add("d-none");
+  }
+};
+```
+
+- `localStorage.clear();` : locaStorage에서 모든 데이터를 삭제합니다.
+- `getKeyword();` : 모든 검색어 초기화 후 HTML 화면을 update하기 위해 함수를 다시 불러옵니다.
+
+```jsx
+// search.js -----------------------------------------------------------------
+// 최근 검색어 모두 삭제
+allClearButton.addEventListener("click", () => {
+  localStorage.clear();
+  getKeyword();
+});
+```
+
+- 해당 검색어를 삭제하는 기능을 구현한 부분입니다.
+- `let updatedKeywords = keywords.filter((keyword) => keyword.id !== id);` : `filter()`메서드를 사용하여 검색어 목록 배열에서 삭제할 검색어를 제외한 모든 검색어만 남기고 새로운 배열을 생성합니다.
+
+```jsx
+// search.js -----------------------------------------------------------------
+// 최근 검색어 단일 삭제
+const deleteKeyword = (id) => {
+  let keywords = JSON.parse(localStorage.getItem("keywords") || "[]");
+  let updatedKeywords = keywords.filter((keyword) => keyword.id !== id);
+  localStorage.setItem("keywords", JSON.stringify(updatedKeywords));
+  getKeyword();
+};
+```
+
+</details>
 
 ## 3. ✴️ 보완해야할 부분
 
@@ -224,8 +401,17 @@
 - 최근 검색어를 클릭하면 해당 검색어로 바로 검색되는 기능
 - 배우 프로필 페이지 만들기
 - 검색 시 키보드 키를 누를 때마다 검색 결과가 실시간으로 나타나도록 설정하는 기능
+- TMDB에서 불러오는 upComing list에는 이미 개봉한 영화도 포함되어 있습니다. 따라서 release date를 기준으로 상영 예정 작품만 필터링하여 불러오도록 수정이 필요합니다.
 
 ## 4. ✴️ 느낀점
+
+처음으로 진행한 개인프로젝트 였습니다.
+<br/>
+초반에는 막막했지만, 계획을 세우고 점진적으로 진행해 나감으로써, 한 발 한 발씩 완성점을 찍어나가는 과정에서 큰 성취감을 느낄 수 있었습니다. 프로젝트를 완성한 후에는 더욱 뿌듯함을 느꼈습니다.
+<br/>
+특히 영화 사이트의 이름을 정하고 로고를 디자인하며 상세페이지를 구현하는 과정에서, 각각의 작은 세부 사항에 제 손길이 닿았다는 점이 매우 의미 있었습니다. 그것들이 모여서 완성된 결과물을 보면서, 제가 직접 만든 것이라는 자부심과 함께 더욱 소중하게 느껴졌습니다.
+<br/>
+이 경험은 저에게 개인적인 성장과 함께, 문제 해결 능력을 키우는 데 큰 도움이 되었습니다. 앞으로도 이런 경험을 통해 더 많은 도전을 극복하고 발전해 나가고자 합니다.
 
 <!-- Top Button -->
 <p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
