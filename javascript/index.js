@@ -106,9 +106,13 @@ const loadMovieListShort = async (listType) => {
   const movieListContainer = document.querySelector(
     `#${listType} .swiper-wrapper`
   );
+  const movieDates = document.querySelector(`.${listType}_date`);
   try {
     const movieData = await getMovieList(listType);
-    console.log("영화목록", movieData);
+    console.log(listType, "영화목록", movieData);
+    if (movieData.dates != null) {
+      movieDates.innerHTML = `${movieData.dates.minimum} ~ ${movieData.dates.maximum} 기준`;
+    }
     const movieBrief = movieData.results;
     if (movieBrief.length > 0) {
       movieBrief.forEach((movie, index) => {
