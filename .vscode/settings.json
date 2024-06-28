@@ -1,0 +1,23 @@
+{
+  "liveSassCompile.settings.generateMap": false, //css map파일 생성
+  "liveSassCompile.settings.autoprefix": false, //벤더프리필스
+  "liveSassCompile.settings.compileOnWatch": false, //Watch Sass 실행 시 모든 .scss 컴파일
+  "liveSassCompile.settings.watchOnLaunch": true, //Watch Sass 자동 실행
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded", //expanded스타일의 css로 컴파일하겠다는 뜻
+      "extensionName": ".css", //컴파일된 파일 확장자를 .css로 지정하겠다는 뜻
+      "savePath": "~/../css/" //컴파일된 파일 저장경로를 설정
+    }
+    // {
+    //   "format": "compressed",
+    //   "extensionName": ".min.css",
+    //   "savePath": null
+    // }
+  ],
+  "liveSassCompile.settings.excludeList": [
+    //컴파일 제외 파일
+    "/**/node_modules/**",
+    "/.vscode/**"
+  ]
+}
